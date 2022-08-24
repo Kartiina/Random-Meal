@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Grotesk:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Grotesk:wght@300;700&display=swap');
+
 html {
   cursor: url("./Group.png"), auto;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 body {
   background: #000000;
   color: #000000;
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
   display: flex;
   max-width: 100%;
   font-family: 'Poppins', sans-serif;
@@ -19,12 +19,12 @@ body {
   line-height: 36px;
 }
 
-.container {
+.container{
   max-width: 1432px;
   min-height: 502px;
   margin: 20px;
   justify-content: center;
-  align-items: center;
+	align-items: center;
 }
 
 .row {
@@ -41,13 +41,19 @@ body {
   margin-top: 120px;
 }
 
+@mixin style1($size: 24px, $weight: 700, $transform: none){
+  font-size: $size;
+  font-weight: $weight;
+  text-transform: $transform;
+}
+
 img {
   width: 1350px;
   height: 830px;
   border-radius: 40px;
 }
 
-.text__center {
+.text__center{
   text-align: center;
   border: none;
   border-radius: 40px;
@@ -55,17 +61,14 @@ img {
   width: 1350px;
   background: #E8603A;
   margin: 10px;
-}
-
-.text__center p {
-  margin: auto auto 24px auto;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: 2px solid #000000;
-  border-radius: 44px;
-  width: 224px;
+  p {
+    margin: auto auto 24px auto;
+    font-family: 'Space Grotesk', sans-serif;
+    @include style1(24px, $transform: uppercase);
+    border: 2px solid #000000;
+    border-radius: 44px;
+    width: 224px;
+  }
 }
 
 .btn {
@@ -84,13 +87,12 @@ img {
   padding: 20px;
   margin: 38px auto;
   animation: rotate 10s linear infinite;
+  
+  &:hover {
+    color: white;
+    cursor: url("./Group.png"), auto;
+  }
 }
-
-.btn:hover {
-  color: white;
-  cursor: url("./Group.png"), auto;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -99,62 +101,47 @@ img {
     transform: rotate(360deg);
   }
 }
-
-.rotate .down {
+.rotate .down{
   transform: rotate(45deg);
 }
-
 h1, h2, h3, h4 {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-h1 {
-  font-size: 64px;
-  font-weight: 700;
-  text-transform: none;
+h1{
+  @include style1(64px);
   line-height: 82px;
   margin-bottom: 16px;
 }
 
 h2 {
-  font-size: 48px;
-  font-weight: 700;
-  text-transform: none;
+  @include style1(48px);
   text-align: center;
   margin-bottom: 64px;
+  
 }
 
-h3 {
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
+h3{
+  @include style1(24px, $transform: uppercase);
+  p {
+    @include style1($weight: 300, $transform: uppercase);
+    white-space: nowrap;
+  }
 }
-
-h3 p {
-  font-size: 24px;
-  font-weight: 300;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.res {
+.res{
   margin-bottom: 64px;
 }
 
-h5 {
-  font-size: 32px;
-  font-weight: 300;
-  text-transform: none;
+h5{
+  @include style1(32px, 300);
 }
 
 li {
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 0;
+  @include style1(18px, 300);
+	margin-bottom: 0;
 }
 
-.row_2 {
+.row_2{
   margin: 140px 120px;
 }
 
@@ -162,34 +149,33 @@ li {
   color: #FFFFFF;
 }
 
-.column_3 h4 {
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-}
-
-.column_3 p {
-  margin-bottom: 64px;
+.column_3{
+  h4 {
+    @include style1(24px, 700, $transform: uppercase);
+    margin-bottom: 32px;
+  }
+  p{
+    margin-bottom: 64px;
+  }
 }
 
 .videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 50px;
-  height: 0;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 50px;
+	height: 0;
 }
 
 .videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 666px;
-  height: 448px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 666px;
+	height: 448px;
 }
 
 @media (max-width: 1300px) {
-  .container {
+  .container{
     max-width: 632px;
     margin-right: 85px;
   }
@@ -198,7 +184,7 @@ li {
     padding: 20px;
     max-height: 520px;
     max-width: 600px;
-  }
+  }  
   .btn {
     margin: 36px auto;
   }
@@ -207,32 +193,31 @@ li {
     justify-content: flex-start;
     margin: 10px;
   }
-  .row_2 {
+  .row_2{
     margin: 10px 10px;
   }
-  .res {
+  .res{
     margin-bottom: 35px;
   }
   img {
     width: 600px;
     height: 420px;
   }
-  .column_2, .column_3 {
+  .column_2, .column_3{
     padding: 0;
   }
-  .column_3 p {
-    font-size: 18px;
-    font-weight: 300;
-    text-transform: none;
+  .column_3{
+    p{
+      @include style1($size: 18px, $weight: 300);
+    }
   }
-  .videoWrapper iframe {
+  .videoWrapper iframe{
     width: 600px;
-    height: 450px;
+	  height: 450px;
   }
 }
-
 @media (min-width: 100px) and (max-width: 650px) {
-  .container {
+  .container{
     max-width: 370px;
     margin-right: 125px;
   }
@@ -241,7 +226,7 @@ li {
     padding: 20px;
     max-height: 560px;
     max-width: 400px;
-  }
+  }  
   .btn {
     margin: 36px auto;
   }
@@ -253,23 +238,23 @@ li {
     margin-right: 60px;
     padding-top: 15px;
   }
-  .row_2 {
+  .row_2{
     margin: 10px 10px;
   }
   img {
     width: 400px;
     height: 400px;
   }
-  .column_2, .column_3 {
+  .column_2, .column_3{
     padding: 0;
   }
-  .column_3 p {
-    font-size: 18px;
-    font-weight: 300;
-    text-transform: none;
+  .column_3{
+    p{
+      @include style1($size: 18px, $weight: 300);
+    }
   }
-  .videoWrapper iframe {
+  .videoWrapper iframe{
     width: 350px;
-    height: 250px;
+	  height: 250px;
   }
 }
