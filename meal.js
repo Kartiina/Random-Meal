@@ -1,6 +1,7 @@
 const get_meal_btn = document.getElementById('get_meal');
 const meal_container = document.getElementById('meal');
 const centr = document.querySelector(".text__center");
+const el = document.querySelector(".row");
 
 var colors = ["#BD3120", "#E1D5B1", "#DE9538", "#E8603A"];
 
@@ -11,6 +12,10 @@ get_meal_btn.addEventListener('click', () => {
             createMeal(res.meals[0]);
         })
     centr.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+     el.scrollIntoView({
+        block: 'nearest',
+        behavior: 'smooth',
+     });
 });
 
 const createMeal = (meal) => {
